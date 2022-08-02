@@ -32,7 +32,7 @@ public class JourneyDaySQLTest {
         SelenideLogger.removeListener("allure");
     }
 
-        @Test
+    @Test
     @DisplayName("APPROVED status by payment")
     public void paymentApprovedStatus() {
         home.payment();

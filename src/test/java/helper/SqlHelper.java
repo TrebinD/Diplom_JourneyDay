@@ -22,7 +22,7 @@ public class SqlHelper {
 //    @SneakyThrows
 //    public static void setupSQL() {
 //        queryRunner = new QueryRunner();
-//        connection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/test", "app", "pass");
+//        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test", "app", "pass");
 //    }
 
     @SneakyThrows

@@ -1,10 +1,10 @@
 package test;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import data.Info;
 import helper.DataHelper;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.*;
 import page.CreditRequestEntity;
 import page.Home;
 import page.PaymentEntity;
@@ -22,6 +22,16 @@ public class JourneyDayUITest {
         open("http://localhost:8080/");
         data = validInfo();
         home = new Home();
+    }
+
+    @BeforeAll
+    static void setUpAll() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+
+    @AfterAll
+    static void tearDownAll(){
+        SelenideLogger.removeListener("allure");
     }
 
     @Test
