@@ -12,18 +12,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SqlHelper {
     private static QueryRunner queryRunner;
     private static Connection connection;
+    private static final String url = System.getProperty("urlDB");
+    private static final String user = System.getProperty("userDB");
+    private static final String password = System.getProperty("passwordDB");
 
     @SneakyThrows
     public static void setupSQL() {
         queryRunner = new QueryRunner();
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
+        connection = DriverManager.getConnection(url, user, password);
     }
 
-//    @SneakyThrows
-//    public static void setupSQL() {
-//        queryRunner = new QueryRunner();
-//        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test", "app", "pass");
-//    }
 
     @SneakyThrows
     public static  String getIdPayment(){
